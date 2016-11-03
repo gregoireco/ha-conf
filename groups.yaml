@@ -1,0 +1,33 @@
+#################################################################
+## Groups
+#################################################################
+
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+      - group.abode_status
+      - group.weather
+      - group.device_location
+      - group.information
+      - group.thermostats
+
+
+  media:
+    name: Media
+    view: yes
+    icon: mdi:play-circle-outline
+    entities:
+      - group.media_player
+
+#######################################################################################
+  thermostats:
+    - 
+
+  Media Player:
+    - media_player.CastLaGrave
+
+Speedtest:
+  - sensor.speedtest_ping
+  - sensor.speedtest_download
+  - sensor.speedtest_upload

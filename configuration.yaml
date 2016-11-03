@@ -1,0 +1,73 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: DomoGravette
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_lattitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 125
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Paris
+
+zone:
+  name: LaGravette
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 100
+  icon: mdi:home
+
+zone 2:
+  name: WorkGreg
+  latitude: !secret workgreg_latitude
+  longitude: !secret workgreg_longitude
+  icon: mdi:briefcase
+
+zone 3:
+  name: WorkClaire
+  latitude: !secret work_claire_latitude
+  longitude: !secret work_claire_longitude
+  icon: mdi:factory
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+
+zeroconf:
+recorder:
+  purge_days: 7
+# Enables the frontend
+frontend:
+
+# Discover some devices automatically
+discovery:
+  rfxtrx:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+   elevation: 125
+
+#RFX TRX 433 E :
+rfxtrx:
+  device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1QEBHS-if00-port0
+
+
+group: !include groups.yaml
+sensor: !include sensors.yaml
+secret: !include secrets.yaml
+
+#automation: !include automation.yaml
+#automation persistence: !include mqtt_persistence.yaml
+#script: !include scripts.yaml
+#binary_sensor: !include binary_sensor.yaml
+#alexa: !include alexa.yaml

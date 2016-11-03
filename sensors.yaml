@@ -1,0 +1,61 @@
+## Sensors for Home Assistant 
+
+  - platform: darksky
+    api_key: 6e15b2128a8fa343345b265cfb59e2cc
+    monitored_conditions:
+      - summary
+      - icon
+      - precip_probability
+      - temperature
+      - wind_speed
+      - humidity
+      - hourly_summary
+
+  # RFXTRX 
+  - platform: rfxtrx
+    automatic_add: True
+
+  # Oregon Sensors 
+    devices:
+      0a520100f00200ce440169:
+        name: Room1
+        data_type: 
+         - Humidity
+         - Temperature
+        fire_event: True
+
+      0a520101360400dc340169:
+        name: Room2
+        data_type:
+          - Humidity
+          - Temperature
+
+      0a520102f90100cf430179:
+        name: Bathroom
+        data_type:
+          - Humidity
+          - Temperature
+
+ # Morning commute :
+  - platform: google_travel_time
+    name: Morning commute
+    api_key: !secret google_travel_time_apikey
+    origin:  ChIJgY71uHK7rhIRGFvsdkblTGk
+    destination: ChIJkYYwWnW-rhIRWjEYaOkxxwE
+
+ # Evening commute :
+  - platform: google_travel_time
+    name: Morning commute
+    api_key: !secret google_travel_time_apikey
+    origin:  ChIJkYYwWnW-rhIRWjEYaOkxxwE
+    destination:  ChIJgY71uHK7rhIRGFvsdkblTGk
+
+# Speedtest
+  - platform: speedtest
+  hour:
+    - 8
+    - 16
+  monitored_conditions:
+    - ping
+    - download
+    - upload
