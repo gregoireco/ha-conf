@@ -37,18 +37,18 @@
           - Temperature
 
  # Morning commute :
-  - platform: google_travel_time
-    name: Morning commute
-    api_key: !secret google_travel_time_apikey
-    origin:  ChIJgY71uHK7rhIRGFvsdkblTGk
-    destination: ChIJkYYwWnW-rhIRWjEYaOkxxwE
+#  - platform: google_travel_time
+#    name: Morning commute
+#    api_key: !secret google_travel_time_apikey
+#    origin:  ChIJgY71uHK7rhIRGFvsdkblTGk
+#    destination: ChIJkYYwWnW-rhIRWjEYaOkxxwE
 
  # Evening commute :
-  - platform: google_travel_time
-    name: Morning commute
-    api_key: !secret google_travel_time_apikey
-    origin:  ChIJkYYwWnW-rhIRWjEYaOkxxwE
-    destination:  ChIJgY71uHK7rhIRGFvsdkblTGk
+#  - platform: google_travel_time
+#    name: Morning commute
+#    api_key: !secret google_travel_time_apikey
+#    origin:  ChIJkYYwWnW-rhIRWjEYaOkxxwE
+#    destination:  ChIJgY71uHK7rhIRGFvsdkblTGk
 
 # Speedtest
   - platform: speedtest

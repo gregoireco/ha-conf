@@ -61,7 +61,6 @@ sun:
 rfxtrx:
   device: /dev/serial/by-id/usb-RFXCOM_RFXtrx433_A1QEBHS-if00-port0
 
-
 group: !include groups.yaml
 sensor: !include sensors.yaml
 secret: !include secrets.yaml
