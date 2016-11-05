@@ -66,6 +66,7 @@ group: !include groups.yaml
 sensor: !include sensors.yaml
 secret: !include secrets.yaml
 
+
 #automation: !include automation.yaml
 #automation persistence: !include mqtt_persistence.yaml
 #script: !include scripts.yaml
